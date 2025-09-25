@@ -1,0 +1,145 @@
+/* Body */
+body {
+    background-color: #ffffff; /* White background for content */
+    color: #000000;            /* Default text black */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #000000; /* Black navbar */
+    color: #ffffff;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem; /* Space between logo and text */
+}
+
+.logo-container h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: #ffffff;
+}
+
+.logo {
+    height: 50px;  /* Adjust logo size */
+    width: auto;
+    border-radius: 5px; /* optional rounded corners */
+}
+
+nav a {
+    text-decoration: none;
+    color: #ffffff; /* White text */
+    margin-left: 1.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav a:hover {
+    background-color: #0040ff; /* Bright blue hover */
+    color: #ffffff;
+}
+
+nav a.active {
+    background-color: #0040ff; /* Active tab blue */
+    color: #ffffff;
+    font-weight: bold;
+}
+
+/* Banner */
+.banner {
+    background-color: #001f4d; /* Dark blue */
+    color: #ffffff;
+    text-align: center;
+    padding: 3rem 2rem;
+    margin: 2rem auto;
+    border-radius: 10px;
+    max-width: 900px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.banner h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.banner p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+.banner .btn {
+    display: inline-block;
+    margin: 0.5rem 0.5rem;
+    padding: 0.7rem 1.5rem;
+    background-color: #000000; /* Black buttons */
+    color: #ffffff; /* White text */
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.banner .btn:hover {
+    background-color: #0040ff; /* Bright blue hover */
+    transform: translateY(-2px);
+}
+
+/* Footer */
+footer {
+    background-color: #000000; /* Black footer */
+    color: #ffffff;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+}
+
+footer .social-icons {
+    margin-top: 0.5rem;
+}
+
+footer .social-link {
+    color: #ffffff;
+    margin: 0 1rem;
+    font-size: 2.5rem;  /* Icon size */
+    text-decoration: none;
+    transition: color 0.3s, transform 0.2s;
+}
+
+footer .social-link:hover {
+    color: #0040ff;  /* League blue hover */
+    transform: scale(1.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav {
+        margin-top: 0.5rem;
+        width: 100%;
+    }
+
+    nav a {
+        display: block;
+        width: 100%;
+        margin: 0.2rem 0;
+    }
+
+    .logo-container {
+        margin-bottom: 0.5rem;
+    }
+}
