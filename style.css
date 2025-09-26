@@ -94,6 +94,62 @@ nav a.active {
     transform: translateY(-2px);
 }
 
+/* Map */
+.map-section {
+    margin: 2rem auto;
+    text-align: center;
+    background-color: #001f4d; /*Dark blue*/
+    padding: 1rem;
+    border-radius: 10px;
+    max-width: 650px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    color: #ffffff
+}
+.map-container {
+    text-align: center;
+    margin: 2rem auto;
+}
+.map-container iframe {
+    width: 90%;
+    max-width: 500px;
+    height: 500px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+/*
+.map-section2{
+    margin: 2rem auto;
+    text-align: center;
+    background-color: #001f4d; 
+    padding: 1rem;
+    border-radius: 10px;
+    max-width: 750px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    color: #ffffff
+}
+.map-container2 {
+    text-align: center;
+    margin: 2rem auto;
+}
+.address {
+  display: inline-block;
+    margin: 0.5rem 0.5rem;
+    padding: 0.7rem 1.5rem;
+    background-color: #000000; 
+    color: #ffffff; 
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s, transform 0.2s;
+    text-wrap: wrap;
+}
+.address:hover {
+    background-color: #0040ff; 
+    transform: translateY(-2px);
+}
+*/
+
 /* Footer */
 footer {
     background-color: #000000; /* Black footer */
