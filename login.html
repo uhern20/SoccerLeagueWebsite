@@ -2,12 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Login - Promo Soccer League</title>
-    <link rel="stylesheet" href="style.css"> <!-- Main styles -->
-    <link rel="stylesheet" href="login.css"> <!-- Login page styles -->
+    <title>Admin Login - Promo Soccer League</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="login.css">
 </head>
 <body>
-    <!-- Header with nav -->
     <header>
         <div class="logo-container">
             <img src="assets/promosoccer.jpg" alt="Promo Soccer League Logo" class="logo">
@@ -17,23 +16,22 @@
             <a href="index.html">Home</a>
             <a href="schedules.html">Schedules</a>
             <a href="payments.html">Payments</a>
-            <a href="login.html" class="active">Login</a>
+            <a href="login.html" class="active">Admin Login</a>
         </nav>
     </header>
 
-    <!-- Login form -->
     <main>
         <div class="login-container">
-            <h1>Login</h1>
-            <form id="login-form">
-                <input type="email" id="login-email" placeholder="Email" required>
-                <input type="password" id="login-password" placeholder="Password" required>
-                <button type="submit">Login</button>
+            <h1>Administrator Access</h1>
+            <p id="admin-status">You are not logged in as admin.</p>
+
+            <form id="code-form">
+                <input type="password" id="admin-code" placeholder="Enter access code" required>
+                <button type="submit">Enter</button>
             </form>
 
-            <p class="register-prompt">
-                Don't have an account? <a href="register.html">Register here</a>
-            </p>
+            <button id="logout-btn" style="display:none;">Logout</button>
+            <p id="error-message" class="error-message"></p>
         </div>
     </main>
 
@@ -41,6 +39,49 @@
         &copy; 2025 Promo Soccer League. All rights reserved.
     </footer>
 
-    <script type="module" src="./firebase.js"></script>
+    <script>
+        const ADMIN_CODE = "testr"; // Placeholder code
+        const isAdmin = localStorage.getItem("isAdmin") === "true";
+        const logoutBtn = document.getElementById("logout-btn");
+        const loginForm = document.getElementById("code-form");
+        const statusText = document.getElementById("admin-status");
+        const input = document.getElementById("admin-code");
+        const errorMsg = document.getElementById("error-message");
+
+        function updateUI() {
+            if (localStorage.getItem("isAdmin") === "true") {
+                statusText.textContent = "✅ You are logged in as admin.";
+                loginForm.style.display = "none";
+                logoutBtn.style.display = "block";
+            } else {
+                statusText.textContent = "You are not logged in as admin.";
+                loginForm.style.display = "block";
+                logoutBtn.style.display = "none";
+            }
+        }
+
+        // Initial UI update
+        updateUI();
+
+        // Login form handler
+        loginForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const code = input.value.trim();
+            if (code === ADMIN_CODE) {
+                localStorage.setItem("isAdmin", "true");
+                updateUI();
+                alert("✅ Logged in as admin!");
+            } else {
+                errorMsg.textContent = "❌ Incorrect administrator code.";
+                input.value = "";
+            }
+        });
+
+        // Logout button
+        logoutBtn.addEventListener("click", () => {
+            localStorage.removeItem("isAdmin");
+            updateUI();
+        });
+    </script>
 </body>
 </html>
